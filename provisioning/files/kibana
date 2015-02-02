@@ -1,0 +1,24 @@
+#! /bin/bash
+# /etc/init.d/kibana
+
+export PATH=$PATH:/usr/local/java/bin
+
+# Carry out specific functions when asked to by the system
+case "$1" in
+  start)
+    echo "Starting Kibana. This might take some time, even after the script has been finished executing."
+    echo "So please be patient ..."
+    nohup /srv/kibana/bin/kibana > /dev/null 2>&1 &
+    ;;
+  stop)
+    # Quick and dirty solution, don't ever do this in reality
+    echo "Stopping Kibana ..."
+    pkill -f kibana.jar
+    ;;
+  *)
+    echo "Usage: /etc/init.d/blah {start|stop}"
+    exit 1
+    ;;
+esac
+
+exit 0
