@@ -27,8 +27,8 @@ You can now access Kibana 4 (or ElasticSearch directly, if you need to):
 | Kibana 4      | [localhost:5601](http://localhost:5601) |
 | ElasticSearch | [localhost:9200](http://localhost:9200) |
 
-If you finished, just enter `vagrant destroy` to throw away everything you
-did (will clear all Kibana Dashboards, etc.) and you can start over again
+If you finished working, just enter `vagrant destroy` to throw away everything you
+did (*Attention:* This will clear all Kibana Dashboards, etc.) and you can start over again
 the next time with `vagrant up`.
 
 If you just want to shutdown the virtual machine without destroying your
