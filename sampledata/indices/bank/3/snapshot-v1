@@ -1,0 +1,54 @@
+{
+  "name" : "v1",
+  "index_version" : 3,
+  "start_time" : 1423135309982,
+  "time" : 5,
+  "number_of_files" : 7,
+  "total_size" : 91137,
+  "files" : [ {
+    "name" : "__0",
+    "physical_name" : "_0.cfs",
+    "length" : 67987,
+    "checksum" : "xhyhrh",
+    "written_by" : "4.10.2"
+  }, {
+    "name" : "__1",
+    "physical_name" : "_0.cfe",
+    "length" : 367,
+    "checksum" : "nto8ig",
+    "written_by" : "4.10.2"
+  }, {
+    "name" : "__2",
+    "physical_name" : "_1.si",
+    "length" : 248,
+    "checksum" : "to46m2",
+    "written_by" : "4.10.2",
+    "meta_hash" : "P9dsFxNMdWNlbmU0NlNlZ21lbnRJbmZvAAAAAQY0LjEwLjIAAAApAQAAAAgJdGltZXN0YW1wDTE0MjMxMzQwMjQ3NTYKb3MudmVyc2lvbhEzLjEzLjAtNDUtZ2VuZXJpYwJvcwVMaW51eA5sdWNlbmUudmVyc2lvbgY0LjEwLjIGc291cmNlBWZsdXNoB29zLmFyY2gFYW1kNjQMamF2YS52ZXJzaW9uCDEuNy4wXzc1C2phdmEudmVuZG9yEk9yYWNsZSBDb3Jwb3JhdGlvbgAAAAMFXzEuc2kGXzEuY2ZzBl8xLmNmZcAok+gAAAAAAAAAAGrupno="
+  }, {
+    "name" : "__3",
+    "physical_name" : "_1.cfs",
+    "length" : 21743,
+    "checksum" : "z6ctn8",
+    "written_by" : "4.10.2"
+  }, {
+    "name" : "__4",
+    "physical_name" : "_0.si",
+    "length" : 248,
+    "checksum" : "16ysf46",
+    "written_by" : "4.10.2",
+    "meta_hash" : "P9dsFxNMdWNlbmU0NlNlZ21lbnRJbmZvAAAAAQY0LjEwLjIAAACfAQAAAAgJdGltZXN0YW1wDTE0MjMxMzQwMjM1ODYKb3MudmVyc2lvbhEzLjEzLjAtNDUtZ2VuZXJpYwJvcwVMaW51eA5sdWNlbmUudmVyc2lvbgY0LjEwLjIGc291cmNlBWZsdXNoB29zLmFyY2gFYW1kNjQMamF2YS52ZXJzaW9uCDEuNy4wXzc1C2phdmEudmVuZG9yEk9yYWNsZSBDb3Jwb3JhdGlvbgAAAAMGXzAuY2ZzBl8wLmNmZQVfMC5zacAok+gAAAAAAAAAAJrahYY="
+  }, {
+    "name" : "__5",
+    "physical_name" : "segments_3",
+    "length" : 177,
+    "checksum" : "p6fnr5",
+    "written_by" : "4.10.2",
+    "meta_hash" : "P9dsFwhzZWdtZW50cwAAAAMAAAAAAAAABQAAAAIAAAACAl8wCUx1Y2VuZTQxMP//////////AAAAAP////////////////////8AAAAAAAAAAAJfMQlMdWNlbmU0MTD//////////wAAAAD/////////////////////AAAAAAAAAAAAAAABC3RyYW5zbG9nX2lkDTE0MjMxMzQwMjIwNDHAKJPoAAAAAAAAAABavvAB"
+  }, {
+    "name" : "__6",
+    "physical_name" : "_1.cfe",
+    "length" : 367,
+    "checksum" : "vsxhvh",
+    "written_by" : "4.10.2"
+  } ]
+}

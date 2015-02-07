@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 
 # Set variables
 FILES=/vagrant/provisioning/files
@@ -7,14 +7,40 @@ FILES=/vagrant/provisioning/files
 tar -C /usr/local -zxf ${FILES}/jre-7u75-linux-x64.tar.gz
 ln -snf /usr/local/jre1.7.0_75 /usr/local/java
 
-# Install elasticsearch from provided .deb package
-dpkg -i ${FILES}/elasticsearch-1.4.2.deb
+# Check wether elasticsearch is already installed
+dpkg-query -W elasticsearch
 
-# write JAVA_HOME for elasticsearch
-echo "export JAVA_HOME=/usr/local/java" >> /etc/default/elasticsearch
+if [ $? -ne 0 ]; then
 
-# Add elasticsearch to startupscripts and start it
-update-rc.d elasticsearch defaults 95 10
-service elasticsearch start
+	# Install elasticsearch from provided .deb package
+	dpkg -i ${FILES}/elasticsearch-1.4.2.deb
 
-# TODO: import sample data
+	# write JAVA_HOME for elasticsearch
+	echo "export JAVA_HOME=/usr/local/java" >> /etc/default/elasticsearch
+
+	# Add elasticsearch to startupscripts and start it
+	update-rc.d elasticsearch defaults 95 10
+
+	service elasticsearch start
+
+	echo "Waiting for elasticsearch to startup ..."
+	until curl -s --connect-timeout 1 localhost:9200; do
+		echo "."
+		sleep 1
+	done
+
+	# Import sample data
+	echo "Importing sample data ..."
+	curl -s -XPUT 'localhost:9200/_snapshot/sampledata/' -d '{
+		"type": "fs",
+		"settings": {
+			"location": "/vagrant/sampledata/",
+			"compress": true
+		}
+	}'
+	curl -s -XPOST 'localhost:9200/_snapshot/sampledata/v1/_restore'
+	echo "Finished importing sample data!"
+
+else
+	service elasticsearch start
+fi
