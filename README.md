@@ -34,3 +34,17 @@ the next time with `vagrant up`.
 If you just want to shutdown the virtual machine without destroying your
 data use `vagrant suspend` and `vagrant resume` to start it again. In this
 case all your data changes and Kibana Dashboards will be persisted.
+
+Sample data
+-----------
+
+The virtual machine contains two indexes of sample data:
+
+*twitter*: the twitter index contains sample tweets taken from the public twitter stream.
+Attention this tweets have been recorded at February 5th between 12:00 and 12:05 (UTC+1).
+To see them in Kibana, you will have to go back to that date. The tweets have been recorded
+using the [stream2es](https://github.com/elasticsearch/stream2es) util, which you can also use
+to generate your own index.
+
+*bank*: this index contains some non time-based data. It represents accounts from a bank
+and come from the [elasticsearch documentation](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/_exploring_your_data.html).
