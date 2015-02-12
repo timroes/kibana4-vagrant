@@ -1,8 +1,6 @@
 #! /bin/bash
 # /etc/init.d/kibana
 
-export PATH=$PATH:/usr/local/java/bin
-
 # Carry out specific functions when asked to by the system
 case "$1" in
   start)
@@ -13,10 +11,10 @@ case "$1" in
   stop)
     # Quick and dirty solution, don't ever do this in reality
     echo "Stopping Kibana ..."
-    pkill -f kibana.jar
+    pkill -f node
     ;;
   *)
-    echo "Usage: /etc/init.d/blah {start|stop}"
+    echo "Usage: /etc/init.d/kibana {start|stop}"
     exit 1
     ;;
 esac
