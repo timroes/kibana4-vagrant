@@ -1,7 +1,7 @@
 Kibana4 Vagrant Machine
 =======================
 
-This is a virtual vagrant machine, that runs the new Kibana 4 Beta with sample data.
+This is a virtual vagrant machine, that runs the new Kibana 4 Release Candidate with sample data.
 
 You can use it to play around with Kibana 4. It is not meant for any production usage.
 
