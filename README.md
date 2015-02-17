@@ -48,3 +48,19 @@ to generate your own index.
 
 *bank*: this index contains some non time-based data. It represents accounts from a bank
 and come from the [elasticsearch documentation](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/_exploring_your_data.html).
+
+Configuration
+-------------
+
+There is a configuration file called `config.yaml` that you can edit with a text editor, to change
+some settings.
+
+Set the `32bit` option to `true` if you run on a system, that only supports 32bit virtualization or
+would like to test the 32 bit version for any other reason. You should normally not need this.
+
+You can specify the amount of memory used by the virtual machine. It is set to `2048` (MB) by default,
+since I think this is a good value that would work for the most users. If you however have very low memory
+you can try to decrease this value or increase it, if you have enough memory left in your system.
+
+**Attention:** Only make changes to this file, while the vagrant machine is destroyed (i.e. never started or
+destroyed via `vagrant destroy`), otherwise the outcome will be uncertain!

@@ -2,11 +2,16 @@
 
 # Set variables
 FILES=/vagrant/provisioning/files
+if [ "$1" == "64" ]; then
+	KIBANA="kibana-4.0.0-rc1-linux-x64.tar.gz"
+else
+	KIBANA="kibana-4.0.0-rc1-linux-x86.tar.gz"
+fi
 
 if [ ! -f /srv/kibana/bin/kibana ]; then
 	# Install kibana
 	mkdir -p /srv/kibana
-	tar -C /srv/kibana -zxf ${FILES}/kibana-4.0.0-rc1-linux-x64.tar.gz --strip 1
+	tar -C /srv/kibana -zxf ${FILES}/${KIBANA} --strip 1
 fi
 
 if [ ! -f /etc/init.d/kibana ]; then

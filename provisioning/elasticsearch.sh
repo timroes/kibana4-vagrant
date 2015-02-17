@@ -4,7 +4,13 @@
 FILES=/vagrant/provisioning/files
 
 # Install java 7
-tar -C /usr/local -zxf ${FILES}/jre-7u75-linux-x64.tar.gz
+if [ "$1" == "64" ]; then
+	jre="jre-7u75-linux-x64.tar.gz"
+else
+	jre="jre-7u75-linux-i586.tar.gz"
+fi
+
+tar -C /usr/local -zxf ${FILES}/${jre}
 ln -snf /usr/local/jre1.7.0_75 /usr/local/java
 
 # Check wether elasticsearch is already installed
