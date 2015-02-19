@@ -19,7 +19,7 @@ dpkg-query -W elasticsearch
 if [ $? -ne 0 ]; then
 
 	# Install elasticsearch from provided .deb package
-	dpkg -i ${FILES}/elasticsearch-1.4.3.deb
+	dpkg -i ${FILES}/elasticsearch-1.4.4.deb
 
 	# write JAVA_HOME for elasticsearch
 	echo "export JAVA_HOME=/usr/local/java" >> /etc/default/elasticsearch
