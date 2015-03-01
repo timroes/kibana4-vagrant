@@ -16,9 +16,9 @@ if [ ! -f /srv/kibana/bin/kibana ]; then
 fi
 
 if [ ! -f /etc/init.d/kibana ]; then
-	cp /vagrant/provisioning/files/kibana /etc/init.d/kibana
-	chmod +x /etc/init.d/kibana
-	update-rc.d kibana defaults 99 10
+	cp /vagrant/provisioning/files/kibana /etc/init.d/kibana4
+	chmod +x /etc/init.d/kibana4
+	update-rc.d kibana4 defaults 99 10
 fi
 
-/etc/init.d/kibana start
+service kibana4 start
