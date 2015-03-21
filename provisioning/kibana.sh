@@ -17,6 +17,8 @@ fi
 
 if [ ! -f /etc/init.d/kibana ]; then
 	cp /vagrant/provisioning/files/kibana /etc/init.d/kibana4
+	# below is to fix the problem of CRLF (DOS format) to LF format
+	perl -pi -e 's/\r\n/\n/g' /etc/init.d/kibana4
 	chmod +x /etc/init.d/kibana4
 	update-rc.d kibana4 defaults 99 10
 fi
