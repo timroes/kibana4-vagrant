@@ -5,13 +5,13 @@ FILES=/vagrant/provisioning/files
 
 # Install java 7
 if [ "$1" == "64" ]; then
-	jre="jre-7u75-linux-x64.tar.gz"
+	jre="jre-7u79-linux-x64.tar.gz"
 else
-	jre="jre-7u75-linux-i586.tar.gz"
+	jre="jre-7u79-linux-i586.tar.gz"
 fi
 
 tar -C /usr/local -zxf ${FILES}/${jre}
-ln -snf /usr/local/jre1.7.0_75 /usr/local/java
+ln -snf /usr/local/jre1.7.0_79 /usr/local/java
 
 # Check wether elasticsearch is already installed
 dpkg-query -W elasticsearch
@@ -19,7 +19,7 @@ dpkg-query -W elasticsearch
 if [ $? -ne 0 ]; then
 
 	# Install elasticsearch from provided .deb package
-	dpkg -i ${FILES}/elasticsearch-1.4.4.deb
+	dpkg -i ${FILES}/elasticsearch-1.5.2.deb
 
 	# write JAVA_HOME for elasticsearch
 	echo "export JAVA_HOME=/usr/local/java" >> /etc/default/elasticsearch
